@@ -1,6 +1,4 @@
-'use strict'
-
-const gulp = require('gulp'),
+gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     del = require('del'),
@@ -60,6 +58,6 @@ gulp.task('usemin', gulp.series(function() {
 
 
 gulp.task('build',
-    gulp.series(gulp.parallel('imagemin', 'usemin'), function(done) {
-        done
+    gulp.series(gulp.parallel('imagemin', 'usemin'), function(start) {
+        start
     }));
