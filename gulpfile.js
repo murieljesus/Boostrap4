@@ -1,4 +1,6 @@
-gulp = require('gulp'),
+'use strict'
+
+var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     del = require('del'),
@@ -10,15 +12,15 @@ gulp = require('gulp'),
     flatmap = require('gulp-flatmap'),
     htmlmin = require('gulp-htmlmin');
 
-gulp.task('sass', gulp.series(function() {
-    gulp.src('./css/*.scss')
+gulp.task('sass', function() {
+    return gulp.src('./css/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css'));
-}))
+});
 
-gulp.task('sass:watch', gulp.series(function() {
-    gulp.watch('./css/*.scss', ['sass']);
-}));
+gulp.task('sass:watch', function() {
+    gulp.watch('./css/*.scss', gulp.series('sass'));
+});
 
 gulp.task('browser-sync', gulp.series(function() {
     var files = ['./*.html', './css/*.css', './images/*.{png, jpg}', './j/*.js']
@@ -31,16 +33,24 @@ gulp.task('browser-sync', gulp.series(function() {
 gulp.task('default', gulp.series(['browser-sync'], function() {
     gulp.start('sass:watch');
 }));
-gulp.task('clean', gulp.series(function() {
+gulp.task('clean', function() {
     return del(['dist']);
-}));
+});
 
-gulp.task('imagemin', gulp.series(function() {
+gulp.task('copyfonts', function() {
+    return gulp.src('./node_modules/open-iconic/font/fonts/*.{ttf,woff,eof,svg,eot,otf}*')
+        .pipe(gulp.dest('./dist/fonts'));
+
+});
+
+gulp.task('imagemin', function() {
     return gulp.src('./images/*.{png,jpg,jpeg}')
         .pipe(imagemin({ optimizationLevel: 3, progessive: true, interlaced: true }))
-}));
+        .pipe(gulp.dest('dist/images'));
 
-gulp.task('usemin', gulp.series(function() {
+});
+
+gulp.task('usemin', function() {
     return gulp.src('./*.html')
         .pipe(flatmap(function(stream, file) {
             return stream
@@ -51,13 +61,10 @@ gulp.task('usemin', gulp.series(function() {
                     inlinejs: [uglify()],
                     inlinecss: [cleanCss(), 'concat']
 
-                }));
+                }))
         }))
         .pipe(gulp.dest('dist/'));
-}));
+});
 
 
-gulp.task('build',
-    gulp.series(gulp.parallel('imagemin', 'usemin'), function(start) {
-        start
-    }));
+gulp.task('build', gulp.series('clean', 'copyfonts', 'imagemin', 'usemin'));

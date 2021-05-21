@@ -1,5 +1,6 @@
-     $(function() {
+     (function() {
          $('[data-toggle="popover"]').popover();
+         $("[data-toggle='tooltip']").tooltip();
 
          $("#contact").on('show.bs.modal', function(e) {
              console.log('el modal se esta mostrando');

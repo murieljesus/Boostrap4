@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+
     require('time-grunt')(grunt);
     require('jit-grunt')(grunt, {
         useminPrepare: 'grunt-usemin'
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: './',
-                    src: 'images/*.jpg',
+                    src: 'images/*.{jpg}',
                     dest: 'dist/images'
 
                 }]
@@ -54,7 +55,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: './',
+                    cwd: 'node-modules/open-iconic/font',
                     src: ['*.html'],
                     dest: 'dist'
                 }]
@@ -135,6 +136,7 @@ module.exports = function(grunt) {
         'imagemin',
         'useminPrepare',
         'concat',
+        'cssmin',
         'uglify',
         'filerev',
         'usemin'
