@@ -12,7 +12,8 @@
         "clean": "rimraf dist",
         "imagemin": "imagemin images/* --out-dir dist/images",
         "usemin": "usemin about.html -d dist --htmlmin -o dist/about.html && usemin price.html -d dist --htmlmin -o dist/price.html && usemin contact.html -d dist --htmlmin -o dist/contact.html && usemin index.html -d dist --htmlmin -o dist/index.html",
-        "build": "npm run clean && npm run scss && npm run imagemin && npm run usemin"
+        "build": "npm run clean && npm run scss && npm run imagemin && npm run usemin",
+        "publish": "gh-pages -d dist"
     },
     "repository": {
         "type": "git",
@@ -20,10 +21,10 @@
     },
     "author": "jesus muriel",
     "license": "ISC",
-    "homepage": "https://github.com/murieljesus/project.git",
+    "homepage": "https://murieljesus.github.io/project",
     "devDependencies": {
         "browser-sync": "^2.26.14",
-        "copyfiles": "^2.4.0",
+        "copyfiles": "^2.4.1",
         "cssmin": "^0.4.3",
         "del": "^6.0.0",
         "grunt": "^1.4.0",
