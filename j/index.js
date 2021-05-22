@@ -2,12 +2,13 @@
          $('[data-toggle="popover"]').popover();
          $("[data-toggle='tooltip']").tooltip();
 
+         $("#disable").on('disabled', true);
          $("#contact").on('show.bs.modal', function(e) {
              console.log('el modal se esta mostrando');
 
              $("#contactobtn").removeClass('btn - outline - info');
              $("#contactobtn").addClass('btn-info');
-             $("#contactobtn").prop('disabled', true);
+             $("#contactobtn").on('disabled', true);
 
 
          });

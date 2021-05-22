@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" content="text/html">
     <!-- Required meta tags -->
-    <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1,
             shrink-to-fit=no" name="viewport">
+
     <!-- build:css css/about.css -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
@@ -90,10 +91,11 @@
 
             </div>
         </div>
+        <hr>
         <div class="alert alert-warning alert-dismissible fade show m-2 " role="alert ">
             <strong> Nuevo Descuento</strong> Aprovecha 50% off en Hoteles reservando hoy!!
-            <button type="button " class="close " data-dismiss="alert " aria-label="close ">
-                    <span aria-hidden="true ">&times;</span>
+            <button type="button " class="close " data-dismiss="alert" aria-label="close ">
+                    <span aria-hidden="true">&times;</span>
                 </button>
 
         </div>
@@ -109,6 +111,7 @@
                     <h6 class="card-subtitle text-muted p-sm-1 ">Patagonia</h6>
                     <p class="card-text ">Excelente hotel con el mejor servicio y en el centro de la ciudad</p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -129,6 +132,7 @@
                     <h6 class="card-subtitle text-muted p-sm-1 ">Patagonia</h6>
                     <p class="card-text ">Excelente hotel con el mejor servicio y en el centro de la ciudad</p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -146,6 +150,7 @@
                     <h6 class="card-subtitle text-muted p-sm-1 ">Patagonia</h6>
                     <p class="card-text ">Excelente hotel con el mejor servicio y en el centro de la ciudad</p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -162,6 +167,7 @@
                         Hotel Ubicado a solo metros de la costa cuenta con spa
                     </p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -180,6 +186,7 @@
                         Ubicado en pleno centro
                     </p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -198,6 +205,7 @@
                         Ubicado en pleno centro
                     </p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -216,6 +224,7 @@
                     <h6 class="card-subtitle text-muted p-sm-1 ">Patagonia</h6>
                     <p class="card-text ">Excelente hotel con el mejor servicio y en el centro de la ciudad</p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -233,9 +242,10 @@
                     </h5>
 
 
-                    <h6 class="card-subtitle text-muted p-sm-1 ">Patagoniass</h6>
+                    <h6 class="card-subtitle text-muted p-sm-1 ">Patagonias</h6>
                     <p class="card-text ">Excelente hotel con el mejor servicio y en el centro de la ciudad</p>
                 </div>
+                <button type="button" class="btn btn-outline-info btn-sm m-1" data-toggle="modal" data-target="#contact" id="contactobtn">Contacto</button>
                 <div>
                     <button class="btn btn-style btn-success " type="button " data-target="#reserva " data-toggle="modal">
                             Reservar
@@ -289,15 +299,18 @@
                         <button class="btn btn-success" type="button" class="close" data-dismiss="modal" aria-label="close">
                             Enviar
                         </button>
+                        <button class="btn btn-danger" type="button" class="close" data-dismiss="modal" aria-label="close">
+                            Cancelar
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="reserva" tabindex="1" role="dialog" aria-labelledby="modallabel" aria-hidden="true">
+        <div class="modal fade" id="reserva" tabindex="1" role="dialog" aria-labelledby="modallabels" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modallabel">
+                        <h5 class="modal-title" id="modallabels">
                             Reserva
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="close">
@@ -306,17 +319,28 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient_name" class="col-form-label">Tu Email:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="recipient_name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="message" class="col-form-label">Mensaje:</label>
-                            <textarea class="form-control" id="message"></textarea>
+                            <label for="recipient_name" class="col-form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient_name" class="col-form-label">Email:</label>
+                            <input type="text" class="form-control" id="recipient">
+                        </div>
+                        <div class="form-group">
+                            <label for="messages" class="col-form-label">Mensaje:</label>
+                            <textarea class="form-control" id="messages"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-success" type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <button class="btn btn-success" type="button" class="close" data-dismiss="modal" aria-label="close" id="disable">
                             Enviar
+                        </button>
+                        <button class="btn btn-danger" type="button" class="close" data-dismiss="modal" aria-label="close">
+                            Cancelar
                         </button>
                     </div>
                 </div>
@@ -357,6 +381,11 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="j/index.js"></script>
+    <script>
+        $("#disable").on("click", function() {
+            $(this).prop("disabled", true);
+        });
+    </script>
     <!-- endbuild -->
 </body>
 
